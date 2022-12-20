@@ -1,0 +1,14 @@
+def local_css(app):
+    with open(app) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+local_css("style.css")
+
+.css-x8wxsk {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgb(38, 39, 48);
+    border-radius: 0.25rem;
+    color: rgb(150, 150, 150);
