@@ -10,33 +10,6 @@ import numpy as np
 from keras.models import load_model
 from PIL import Image, ImageOps #Install pillow instead of PIL
 import numpy as np
- 
-
-def local_css(file_name):
- with open(file_name) as f:
-  st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
-local_css("style/style.css")
-
-animation_symbol = "❄"
-
-st.markdown(
- f"""
- <div class="snowflake">{animation_symbol}</div>
- <div class="snowflake">{animation_symbol}</div>
- <div class="snowflake">{animation_symbol}</div>
- <div class="snowflake">{animation_symbol}</div>
- <div class="snowflake">{animation_symbol}</div>
- <div class="snowflake">{animation_symbol}</div>
- <div class="snowflake">{animation_symbol}</div>
- <div class="snowflake">{animation_symbol}</div>
- <div class="snowflake">{animation_symbol}</div>
- <div class="snowflake">{animation_symbol}</div>
- <div class="snowflake">{animation_symbol}</div>
- """,
- unsafe_allow_html=True
-)
-
 
 def local_css(file_name):
  with open(file_name) as f:
@@ -91,7 +64,7 @@ st.sidebar.title("ALL Detector")
 np.set_printoptions(suppress=True)
 
 # Load the model
-model = load_model('keras_Model.h5', compile=False)
+model = tf.keras.models.load_model('model')
 
 # Load the labels
 class_names = open('labels.txt', 'r').readlines()
