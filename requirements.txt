@@ -2,5 +2,3 @@ numpy
 tensorflow
 matplotlib
 keras
-RMSprop
-ImageDataGenerator
