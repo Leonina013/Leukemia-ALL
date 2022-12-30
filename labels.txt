@@ -1,4 +1,0 @@
-0 Benign
-1 Malignant Pro-B
-2 Malignant Pre-B
-3 Malignant early Pre-B
