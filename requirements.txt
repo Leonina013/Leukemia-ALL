@@ -4,5 +4,3 @@ matplotlib
 keras
 RMSprop
 ImageDataGenerator
-load_model
-
