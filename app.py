@@ -64,7 +64,7 @@ st.sidebar.title("ALL Detector")
 np.set_printoptions(suppress=True)
 
 # Load the model
-model = tf.keras.models.load_model('model')
+model = load_model('keras_Model.h5', compile=False)
 
 # Load the labels
 class_names = open('labels.txt', 'r').readlines()
