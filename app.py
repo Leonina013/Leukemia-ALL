@@ -65,7 +65,7 @@ np.set_printoptions(suppress=True)
 
 # Load the model
 @st.cache(allow_output_mutation=True)
-def load_model():
+def load_models():
  model = load_model('keras_Model.h5', compile=False)
  model.predict()
  model.summary()
@@ -109,7 +109,11 @@ normalized_image_array = (image_array.astype(np.float32) / 127.0) - 1
 data[0] = normalized_image_array
 
 # run the inference
-prediction = model.predict(data)
+@st.cache
+def predicts()
+ prediction = model.predict(data)
+ return prediction
+
 index = np.argmax(prediction)
 class_name = class_names[index]
 confidence_score = prediction[0][index]
