@@ -196,7 +196,7 @@ if confidence_score >= 0.85:
 
 
  else:
- st.write("You are free from ALL but don't forget to get a body checkup regularly")   
+  st.write("You are free from ALL but don't forget to get a body checkup regularly")   
 
 
 
