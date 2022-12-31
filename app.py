@@ -110,7 +110,7 @@ data[0] = normalized_image_array
 
 # run the inference
 @st.cache
-def predicts()
+def predicts():
  prediction = model.predict(data)
  return prediction
 
