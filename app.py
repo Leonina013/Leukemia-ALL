@@ -203,7 +203,7 @@ def final(confidence_score, index, sex, age, class_name, confidence2):
 
   else:
    st.write("You are free from ALL but don't forget to get a body checkup regularly")   
-return
+
 
 
 
