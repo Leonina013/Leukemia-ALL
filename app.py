@@ -108,7 +108,7 @@ data[0] = normalized_image_array
 
 # run the inference
 @st.cache
-def predicts():
+def predicts(model):
  prediction = model.predict(data)
  index = np.argmax(prediction)
  class_name = class_names[index]
@@ -138,7 +138,8 @@ if uploaded_file is not None:
  age = st.sidebar.slider("What is the age of the person?",0.0,150.0,50.0)
  smoker = st.sidebar.selectbox('Is the Person a Smoker',('Yes', 'No'))
 
-
+@st.cache
+def age_sex(age, sex):
  if age <= 5.0 and sex == 'Male':
   confidence = confidence_score * ((165+age)/100)
  if age > 5.0 and age <= 25.0 and sex == 'Male':
@@ -155,7 +156,11 @@ if uploaded_file is not None:
   confidence = confidence_score * ((50+age)/100)
  if age > 50.0 and sex == 'Female':
   confidence = confidence_score * ((65+age)/100)
-
+  return confidence
+ 
+ 
+@st.cache
+def smoker_age(age, smoker, confidence):
  if smoker == 'Yes' and age >= 60:
   confidence2 = confidence*3.4
   st.write("Smoking increases your chance of having ALL 3.4 times your actual probability after all other factors like age and gender have been considered")
@@ -164,10 +169,13 @@ if uploaded_file is not None:
   st.write("Smoking increases your chance of having ALL 1.72 times your actual probability after all other factors like age and gender have been considered")
  if smoker == 'No':
   confidence2 = confidence
- #https://pubmed.ncbi.nlm.nih.gov/8246285/#:~:text=However%2C%20among%20participants%20aged%2060,CI%20%3D%200.97%2D11.9).
+  return confidence2
+ 
+#https://pubmed.ncbi.nlm.nih.gov/8246285/#:~:text=However%2C%20among%20participants%20aged%2060,CI%20%3D%200.97%2D11.9).
 
 
-
+@st.cache
+def final(confidence_score, index, sex, age, class_name, confidence2):
 if confidence_score >= 0.85:
 
  if index == 0:
@@ -195,6 +203,7 @@ if confidence_score >= 0.85:
 
  else:
   st.write("You are free from ALL but don't forget to get a body checkup regularly")   
+return
 
 
 
