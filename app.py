@@ -66,7 +66,7 @@ np.set_printoptions(suppress=True)
 
 # Load the model
 
-model = tf.keras.models.load_model('model', compile=False)
+model = tf.keras.models.load_model('/model/keras_model.h5', compile=False)
 
 
 # Load the labels
