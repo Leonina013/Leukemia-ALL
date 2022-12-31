@@ -112,12 +112,11 @@ data[0] = normalized_image_array
 @st.cache
 def predicts():
  prediction = model.predict(data)
- return prediction
-
-index = np.argmax(prediction)
-class_name = class_names[index]
-confidence_score = prediction[0][index]
-confidence = confidence_score
+ index = np.argmax(prediction)
+ class_name = class_names[index]
+ confidence_score = prediction[0][index]
+ confidence = confidence_score
+ return prediction, index, class_name, confidence_score, confidence
 
 print('Class:', class_name, end='')
 print('Confidence score:', confidence_score)
