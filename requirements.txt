@@ -2,4 +2,3 @@ streamlit
 tensorflow
 numpy
 keras.preprocessing
-os
