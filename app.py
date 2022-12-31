@@ -168,7 +168,7 @@ def additional_stats():
  if smoker == 'No':
   confidence2 = confidence
  #https://pubmed.ncbi.nlm.nih.gov/8246285/#:~:text=However%2C%20among%20participants%20aged%2060,CI%20%3D%200.97%2D11.9).
- return confidence2
+ return confidence, confidence2, confidence_score
 
 @st.cache
 def final_predicts():
