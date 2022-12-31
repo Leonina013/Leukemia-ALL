@@ -176,33 +176,33 @@ def smoker_age(age, smoker, confidence):
 
 @st.cache
 def final(confidence_score, index, sex, age, class_name, confidence2):
-if confidence_score >= 0.85:
+ if confidence_score >= 0.85:
 
- if index == 0:
-  st.write('You identify as', sex,'and your age is', age,'years')
-  st.write('The Predicted Class is:', class_name)
-  st.write('Probability Percentage:', confidence_score*100, '%')
-  st.write("You may have a benign condition, or are free of ALL. Get it checked once during your regular body check")
-  st.write("Benign tumors are those that stay in their primary location without invading other sites of the body. They do not spread to local structures or to distant parts of the body. Benign tumors tend to grow slowly and have distinct borders. Benign tumors are not usually problematic.")
-
-
- else:
-  st.write('You identify as', sex,'and your age is', age,'years')
-  st.write('The Predicted Class is:', class_name)
-  st.write('The Original Probability Percentage:', confidence_score*100, '%')
-  st.write('Probability Percentage due to your age group:', confidence2 * 100, '%')
-
- if index == 1:
-  st.write("This looks like a Malignant Pro-B variant of ALL. You need to get it checked before the cancer starts spreading")
- elif index == 2:
-  st.write("This looks like a Malignant Pre-B variant of ALL. You need to get it checked ASAP before the condition metastisizes")
- elif index == 3:
-  st.write("This looks like an early Malignant Pre-B variant of ALL. You need to get it checked as a priority before it becomes something serious")
-  st.write("Malignancy is a term for diseases in which abnormal cells divide without control and can invade nearby tissues. Malignant cells can also spread  to other parts of the body through the blood and lymph systems.")
+  if index == 0:
+   st.write('You identify as', sex,'and your age is', age,'years')
+   st.write('The Predicted Class is:', class_name)
+   st.write('Probability Percentage:', confidence_score*100, '%')
+   st.write("You may have a benign condition, or are free of ALL. Get it checked once during your regular body check")
+   st.write("Benign tumors are those that stay in their primary location without invading other sites of the body. They do not spread to local structures or to distant parts of the body. Benign tumors tend to grow slowly and have distinct borders. Benign tumors are not usually problematic.")
 
 
- else:
-  st.write("You are free from ALL but don't forget to get a body checkup regularly")   
+  else:
+   st.write('You identify as', sex,'and your age is', age,'years')
+   st.write('The Predicted Class is:', class_name)
+   st.write('The Original Probability Percentage:', confidence_score*100, '%')
+   st.write('Probability Percentage due to your age group:', confidence2 * 100, '%')
+
+  if index == 1:
+   st.write("This looks like a Malignant Pro-B variant of ALL. You need to get it checked before the cancer starts spreading")
+  elif index == 2:
+   st.write("This looks like a Malignant Pre-B variant of ALL. You need to get it checked ASAP before the condition metastisizes")
+  elif index == 3:
+   st.write("This looks like an early Malignant Pre-B variant of ALL. You need to get it checked as a priority before it becomes something serious")
+   st.write("Malignancy is a term for diseases in which abnormal cells divide without control and can invade nearby tissues. Malignant cells can also spread  to other parts of the body through the blood and lymph systems.")
+
+
+  else:
+   st.write("You are free from ALL but don't forget to get a body checkup regularly")   
 return
 
 
