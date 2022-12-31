@@ -140,6 +140,8 @@ if uploaded_file is not None:
  age = st.sidebar.slider("What is the age of the person?",0.0,150.0,50.0)
  smoker = st.sidebar.selectbox('Is the Person a Smoker',('Yes', 'No'))
 
+@st.cache
+def additional_stats():
  if age <= 5.0 and sex == 'Male':
   confidence = confidence_score * ((165+age)/100)
  if age > 5.0 and age <= 25.0 and sex == 'Male':
@@ -166,6 +168,7 @@ if uploaded_file is not None:
  if smoker == 'No':
   confidence2 = confidence
  #https://pubmed.ncbi.nlm.nih.gov/8246285/#:~:text=However%2C%20among%20participants%20aged%2060,CI%20%3D%200.97%2D11.9).
+ return confidence2
 
 
 if confidence_score >= 0.85:
