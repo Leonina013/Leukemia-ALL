@@ -117,9 +117,9 @@ def predicts():
  confidence_score = prediction[0][index]
  confidence = confidence_score
  return prediction, index, class_name, confidence_score, confidence
+ print('Class:', class_name, end='')
+ print('Confidence score:', confidence_score)
 
-print('Class:', class_name, end='')
-print('Confidence score:', confidence_score)
 
 
 st.title("ALL Classification")
