@@ -65,7 +65,7 @@ np.set_printoptions(suppress=True)
 
 # Load the model
 @st.cache(allow_output_mutation=True)
-def load_models()
+def load_models():
 model = load_model('keras_Model.h5', compile=False)
 
 # Load the labels
