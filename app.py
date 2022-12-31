@@ -126,17 +126,10 @@ st.text("Upload the picture of a slide to detect it is normal or has ALL")
 # file upload and handling logic
 
 
-if uploaded_file is not None:
 
- image = Image.open(uploaded_file).convert('RGB')
-#image = Image.open(img_name).convert('RGB')
- st.image(image, caption='Uploaded an image.', use_column_width=True)
- st.write("")
- st.write("Doing the classification......Calling the pathologist with his cup of SwissMiss")
-
- sex = st.sidebar.selectbox('What is the sex of the person?',('Male', 'Female'))
- age = st.sidebar.slider("What is the age of the person?",0.0,150.0,50.0)
- smoker = st.sidebar.selectbox('Is the Person a Smoker',('Yes', 'No'))
+sex = st.sidebar.selectbox('What is the sex of the person?',('Male', 'Female'))
+age = st.sidebar.slider("What is the age of the person?",0.0,150.0,50.0)
+smoker = st.sidebar.selectbox('Is the Person a Smoker',('Yes', 'No'))
 
 @st.cache
 def age_sex(age, sex):
@@ -203,6 +196,15 @@ def final(confidence_score, index, sex, age, class_name, confidence2):
 
   else:
    st.write("You are free from ALL but don't forget to get a body checkup regularly")   
+   
+ 
+if uploaded_file is not None:
+
+ image = Image.open(uploaded_file).convert('RGB')
+#image = Image.open(img_name).convert('RGB')
+ st.image(image, caption='Uploaded an image.', use_column_width=True)
+ st.write("")
+ st.write("Doing the classification......Calling the pathologist with his cup of SwissMiss")
 
 
 
