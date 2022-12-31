@@ -11,7 +11,50 @@ from keras.models import load_model
 from PIL import Image, ImageOps #Install pillow instead of PIL
 import numpy as np
 
+def local_css(file_name):
+ with open(file_name) as f:
+  st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
+local_css("style/style.css")
+
+animation_symbol = "❄"
+
+st.markdown(
+ f"""
+ <div class="snowflake">{animation_symbol}</div>
+ <div class="snowflake">{animation_symbol}</div>
+ <div class="snowflake">{animation_symbol}</div>
+ <div class="snowflake">{animation_symbol}</div>
+ <div class="snowflake">{animation_symbol}</div>
+ <div class="snowflake">{animation_symbol}</div>
+ <div class="snowflake">{animation_symbol}</div>
+ <div class="snowflake">{animation_symbol}</div>
+ <div class="snowflake">{animation_symbol}</div>
+ <div class="snowflake">{animation_symbol}</div>
+ <div class="snowflake">{animation_symbol}</div>
+ """,
+ unsafe_allow_html=True
+)
+
+
+
+
+def add_bg_from_url():
+    st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-image: url("https://static.vecteezy.com/system/resources/previews/007/934/086/non_2x/abstract-purple-and-pink-gradient-waves-background-glowing-lines-on-purple-background-vector.jpg");
+             background-attachment: fixed;
+             
+             background-size: cover
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
+
+add_bg_from_url()
 
 
 st.sidebar.title("ALL Detector")
