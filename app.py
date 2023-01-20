@@ -5,8 +5,6 @@ from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import Paragraph, SimpleDocTemplate
 import random
-import shutil
-
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras.optimizers import RMSprop
@@ -211,11 +209,11 @@ if confidence_score >= 0.85:
 
 if st.button("Generate PDF"):
    
-    def generate_pdf():
-    # Get the user's input
+     def generate_pdf():
+     # Get the user's input
      name = st.text_input("Enter your name:")
      age = st.number_input("Enter your age:")
-    # Create the PDF
+     # Create the PDF
      doc = SimpleDocTemplate("output.pdf", pagesize=letter)
      styles = getSampleStyleSheet()
      elements = []
@@ -226,8 +224,7 @@ if st.button("Generate PDF"):
    
     pdf_file = generate_pdf()
     st.success("PDF generated!")
-    shutil.copy2(pdf_file, "path/to/downloads")
-    st.file_downloader("Download the pdf file", "path/to/downloads/output.pdf")
+    st.write("You can download your pdf file by clicking [here]({})".format(pdf_file))
 
 
 
