@@ -5,6 +5,7 @@ from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import Paragraph, SimpleDocTemplate
 import random
+import shutil
 
 import tensorflow as tf
 from tensorflow import keras
@@ -206,7 +207,11 @@ if confidence_score >= 0.85:
   st.write("You are free from ALL but don't forget to get a body checkup regularly")   
    
  
-def generate_pdf():
+
+
+if st.button("Generate PDF"):
+   
+    def generate_pdf():
     # Get the user's input
     name = st.text_input("Enter your name:")
     age = st.number_input("Enter your age:")
@@ -218,11 +223,11 @@ def generate_pdf():
     elements.append(Paragraph("Age: " + str(age), styles["Normal"]))
     doc.build(elements)
     return "output.pdf"
-
-if st.button("Generate PDF"):
+   
     pdf_file = generate_pdf()
     st.success("PDF generated!")
-    st.download(pdf_file)
+    shutil.copy2(pdf_file, "path/to/downloads")
+    st.file_downloader("Download the pdf file", "path/to/downloads/output.pdf")
 
 
 
