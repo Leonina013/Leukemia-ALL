@@ -213,16 +213,16 @@ if st.button("Generate PDF"):
    
     def generate_pdf():
     # Get the user's input
-    name = st.text_input("Enter your name:")
-    age = st.number_input("Enter your age:")
+     name = st.text_input("Enter your name:")
+     age = st.number_input("Enter your age:")
     # Create the PDF
-    doc = SimpleDocTemplate("output.pdf", pagesize=letter)
-    styles = getSampleStyleSheet()
-    elements = []
-    elements.append(Paragraph("Name: " + name, styles["Normal"]))
-    elements.append(Paragraph("Age: " + str(age), styles["Normal"]))
-    doc.build(elements)
-    return "output.pdf"
+     doc = SimpleDocTemplate("output.pdf", pagesize=letter)
+     styles = getSampleStyleSheet()
+     elements = []
+     elements.append(Paragraph("Name: " + name, styles["Normal"]))
+     elements.append(Paragraph("Age: " + str(age), styles["Normal"]))
+     doc.build(elements)
+     return "output.pdf"
    
     pdf_file = generate_pdf()
     st.success("PDF generated!")
