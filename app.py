@@ -1,6 +1,9 @@
 import streamlit as st
 import os
 from PIL import Image
+from reportlab.lib.pagesizes import letter
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.platypus import Paragraph, SimpleDocTemplate
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras.optimizers import RMSprop
@@ -56,6 +59,18 @@ def add_bg_from_url():
      )
 
 add_bg_from_url()
+
+def generate_pdf():
+    # Get the user's input
+    name = st.text_input("Enter your name:")
+    age = st.number_input("Enter your age:")
+    # Create the PDF
+    doc = SimpleDocTemplate("output.pdf", pagesize=letter)
+    styles = getSampleStyleSheet()
+    elements = []
+    elements.append(Paragraph("Name: " + name, styles["Normal"]))
+    elements.append(Paragraph("Age: " + str(age), styles["Normal"]))
+    doc.build(elements)
 
 
 st.sidebar.title("ALL Detector")
@@ -201,7 +216,10 @@ if confidence_score >= 0.85:
  
 
 
-
+st.button("Generate PDF")
+if st.button("Generate PDF"):
+    generate_pdf()
+    st.success("PDF generated!")
 
 
 
