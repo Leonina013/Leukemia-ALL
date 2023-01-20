@@ -217,10 +217,12 @@ def generate_pdf():
     elements.append(Paragraph("Name: " + name, styles["Normal"]))
     elements.append(Paragraph("Age: " + str(age), styles["Normal"]))
     doc.build(elements)
+    return "output.pdf"
 
-if st.button("Generate PDF", key='generate_pdf'):
-    generate_pdf()
+if st.button("Generate PDF"):
+    pdf_file = generate_pdf()
     st.success("PDF generated!")
+    st.download(pdf_file)
 
 
 
