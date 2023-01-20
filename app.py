@@ -218,7 +218,6 @@ def generate_pdf():
     elements.append(Paragraph("Age: " + str(age), styles["Normal"]))
     doc.build(elements)
 
-st.button("Generate PDF", key='generate_pdf')
 if st.button("Generate PDF", key='generate_pdf'):
     generate_pdf()
     st.success("PDF generated!")
