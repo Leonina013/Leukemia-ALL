@@ -167,7 +167,7 @@ if uploaded_file is not None:
  st.write("Doing the classification......Calling the pathologist with his cup of SwissMiss")
 
 sex = st.sidebar.selectbox('What is the sex of the person?',('Male', 'Female'))
-age = st.sidebar.slider("What is the age of the person?",0.0,150.0,50.0)
+age = st.sidebar.slider("What is the age of the person?",0,150,50)
 smoker = st.sidebar.selectbox('Is the Person a Smoker',('Yes', 'No'))
 
 if index==4:
