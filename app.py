@@ -203,7 +203,31 @@ if confidence_score >= 0.85:
   st.write("You are free from ALL but don't forget to get a body checkup regularly")   
    
 
+def create_report():
+    st.title("Medical Report")
 
+    patient_name = st.text_input("Patient Name")
+    age = st.number_input("Age")
+    symptoms = st.text_area("Symptoms")
+    diagnosis = st.text_area("Diagnosis")
+    treatment = st.text_area("Treatment")
+
+    if st.button("Create Report"):
+        report = f"""
+        Patient Name: {patient_name}
+        Age: {age}
+        Symptoms: {symptoms}
+        Diagnosis: {diagnosis}
+        Treatment: {treatment}
+        """
+        st.success("Report created!")
+        st.text(report)
+        st.markdown("Or")
+        st.write("click below to download the report.")
+        st.markdown("<a href='download' download='Medical_Report.txt'>Download Report</a>", unsafe_allow_html=True)
+
+if __name__ == "__main__":
+    create_report()
 
 
 
