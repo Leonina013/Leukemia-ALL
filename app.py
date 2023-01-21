@@ -1,6 +1,8 @@
 import streamlit as st
 import os
 import pdfkit
+import subprocess
+
 from PIL import Image
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import letter
@@ -64,6 +66,10 @@ add_bg_from_url()
 
 
 
+html_file = "report.html"
+pdf_file = "report.pdf"
+
+subprocess.call(["wkhtmltopdf", html_file, pdf_file])
 
 
 st.sidebar.title("ALL Detector")
