@@ -101,7 +101,7 @@ if mode == 'JPG':
  uploaded_file = st.file_uploader("Choose an Image", type="jpg")
 
 image = Image.open(uploaded_file).convert('RGB')
-image2 = Image.open('1.jpeg').convert('RGB')
+image2 = Image.open('model/1.jpeg').convert('RGB')
 
 
 #resize the image to a 224x224 with the same strategy as in TM2:
