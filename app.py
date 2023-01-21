@@ -228,9 +228,9 @@ def create_report():
     st.title("Medical Report")
 
     patient_name = st.text_input("Patient Name")
-    age1 <- age
-    symptoms <- confidence
-    diagnosis <- class_name
+    age1 = age
+    symptoms = confidence
+    diagnosis = class_name
     treatment = st.text_area("Treatment")
 
     if st.button("Create Report"):
