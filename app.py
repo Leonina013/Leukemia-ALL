@@ -253,7 +253,7 @@ def create_report():
 
 ans=st.slider("Would you like a report detailing the diagnosis?", options=['YES','No Decision','NO'])  
 
-if ans=='YES'
+if ans=='YES':
  create_report()
 else
  st.write("Okay, have a healthy time ahead")
