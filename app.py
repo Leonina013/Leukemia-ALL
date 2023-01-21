@@ -251,8 +251,12 @@ def create_report():
         st.write("click below to download the report.")
         st.markdown("<a href='download' download='Medical_Report.txt'>Download Report</a>", unsafe_allow_html=True)
 
-if __name__ == "__main__":
-    create_report()
+ans=st.slider("Would you like a report detailing the diagnosis?", options=['YES','No Decision','NO'])  
+
+if ans=='YES'
+ create_report()
+else
+ st.write("Okay, have a healthy time ahead")
 
 
 
