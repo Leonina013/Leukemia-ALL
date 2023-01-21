@@ -228,9 +228,9 @@ def create_report():
     st.title("Medical Report")
 
     patient_name = st.text_input("Patient Name")
-    age1 = st.text_area(age)
-    probability = st.text_area(confidence_score*100)
-    diagnosis = st.text_area(class_name)
+    age1 = age
+    probability = confidence_score*100
+    diagnosis = class_name
     treatment = st.text_area("Treatment")
 
     if st.button("Create Report"):
@@ -242,7 +242,6 @@ def create_report():
         Treatment: {treatment}
         Smoker: {smoker}
         """
-        st.markdown("<div style='background-color:white; padding: 10px;'>", unsafe_allow_html=True)
         st.success("Report created!")
         st.text(report)
         st.markdown("Or")
