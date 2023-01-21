@@ -4,3 +4,5 @@ numpy
 keras.preprocessing
 h5py
 reportlab
+tempfile
+shutil
