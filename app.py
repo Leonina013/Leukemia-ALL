@@ -11,6 +11,8 @@ from tensorflow.keras.optimizers import RMSprop
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from PIL import Image, ImageOps
 import numpy as np
+import tempfile
+import shutil
 
 from keras.models import load_model
 from PIL import Image, ImageOps #Install pillow instead of PIL
