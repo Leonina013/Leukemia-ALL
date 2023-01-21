@@ -2,7 +2,6 @@ import streamlit as st
 import os
 import base64
 from PIL import Image
-!pip install streamlit-wallet-connect
 from wallet_connect import wallet_connect
 import random
 import tensorflow as tf
