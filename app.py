@@ -225,11 +225,11 @@ else:
     st.write('Probability Percentage due to your age group:', confidence2 * 100, '%')
 
    if index == 1:
-    st.write("This looks like a Malignant Pro-B variant of ALL. You need to get it checked before the cancer starts spreading")
+    st.subheader("This looks like a Malignant Pro-B variant of ALL. You need to get it checked before the cancer starts spreading")
    elif index == 2:
-    st.write("This looks like a Malignant Pre-B variant of ALL. You need to get it checked ASAP before the condition metastisizes")
+    st.subheader("This looks like a Malignant Pre-B variant of ALL. You need to get it checked ASAP before the condition metastisizes")
    elif index == 3:
-    st.write("This looks like an early Malignant Pre-B variant of ALL. You need to get it checked as a priority before it becomes something serious")
+    st.subheader("This looks like an early Malignant Pre-B variant of ALL. You need to get it checked as a priority before it becomes something serious")
     st.write("Malignancy is a term for diseases in which abnormal cells divide without control and can invade nearby tissues. Malignant cells can also spread  to other parts of the body through the blood and lymph systems.")
 
   
