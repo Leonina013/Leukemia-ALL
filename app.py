@@ -229,7 +229,7 @@ def create_report():
 
     patient_name = st.text_input("Patient Name")
     age1 = age
-    probability = confidence_score
+    probability = confidence_score*100
     diagnosis = class_name
     treatment = st.text_area("Treatment")
 
