@@ -208,11 +208,11 @@ if confidence_score >= 0.85:
 
 
 def generate_report():
-    patient_name = st.text_input("Patient Name")
-    age = st.number_input("Age")
-    symptoms = st.text_area("Symptoms")
-    diagnosis = st.text_input("Diagnosis")
-    treatment = st.text_input("Treatment")
+    patient_name = st.text_input("Patient Name", key="patient_name")
+    age = st.number_input("Age", key="age")
+    symptoms = st.text_area("Symptoms", key="symptoms")
+    diagnosis = st.text_input("Diagnosis", key="diagnosis")
+    treatment = st.text_input("Treatment", key="treatment")
 
     report = f"Medical Report for {patient_name}\n"
     report += f"Age: {age}\n"
@@ -223,11 +223,10 @@ def generate_report():
     st.success("Report generated!")
     st.write(report)
     st.markdown("You can download report as a text file")
-    if st.button("Download Report"):
-        st.text_area(report, 'download')
-      
-st.title("Medical Report Generator")
-generate_report()
+    if st.button("Download Report", key="download_report"):
+        pdf_file = generate_pdf(report)
+        st.markdown("Report is available for download.")
+        st.markdown("[Download Report]({})".format(pdf_file))
 
 def generate_pdf(report):
     pdf_file = "report.pdf"
@@ -240,10 +239,9 @@ def generate_pdf(report):
     doc.build(story)
     return pdf_file
 
-if st.button("Download Report"):
-    pdf_file = generate_pdf(report)
-    st.markdown("Report is available for download.")
-    st.markdown("[Download Report]({})".format(pdf_file))
+st.title("Medical Report Generator")
+generate_report()
+
  
 
 
