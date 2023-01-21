@@ -207,7 +207,32 @@ if confidence_score >= 0.85:
   st.write("You are free from ALL but don't forget to get a body checkup regularly")   
    
 
- 
+
+def generate_report():
+    st.set_page_config(page_title="Medical Report Generator", page_icon=":hospital:", layout="wide")
+    patient_name = st.text_input("Patient Name", key="patient_name")
+    age = st.number_input("Age", key="age")
+    symptoms = st.text_area("Symptoms", key="symptoms")
+    diagnosis = st.text_input("Diagnosis", key="diagnosis")
+    treatment = st.text_input("Treatment", key="treatment")
+
+    report = f"Medical Report for {patient_name}\n"
+    report += f"Age: {age}\n"
+    report += f"Symptoms: {symptoms}\n"
+    report += f"Diagnosis: {diagnosis}\n"
+    report += f"Treatment: {treatment}\n"
+
+    if st.button("Generate Report"):
+        st.success("Report generated!")
+        st.write(report)
+        st.markdown("You can download the report as a pdf.")
+        if st.button("Download Report"):
+            pdfkit.from_string(report, 'report.pdf')
+            st.markdown("Report is available for download.")
+            st.markdown("[Download Report](report.pdf)")
+
+st.title("Medical Report Generator")
+generate_report()
 
 
 
