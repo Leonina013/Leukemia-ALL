@@ -2,6 +2,8 @@ import streamlit as st
 import os
 import base64
 from PIL import Image
+pip install streamlit-wallet-connect
+from wallet_connect import wallet_connect
 import random
 import tensorflow as tf
 from tensorflow import keras
@@ -60,6 +62,15 @@ def add_bg_from_url():
 
 add_bg_from_url()
 
+login_button = wallet_connect(
+    label="login", 
+    key="login", 
+    message="Connect and Login to Metamask to enumerate the amount of DALL coins present in your wallet. :)", 
+    auth_token_contract_address="0x609A19B6f00C5054e2869d26Eb53039e5409ABD4",
+    chain_name="polygon", 
+    contract_type="ERC20",
+    num_tokens="100"
+    )
 
 st.sidebar.title("ALL Detector")
 
