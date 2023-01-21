@@ -62,27 +62,7 @@ def add_bg_from_url():
 add_bg_from_url()
 
 
-def generate_report():
-    patient_name = st.text_input("Patient Name")
-    age = st.number_input("Age")
-    symptoms = st.text_area("Symptoms")
-    diagnosis = st.text_input("Diagnosis")
-    treatment = st.text_input("Treatment")
 
-    report = f"Medical Report for {patient_name}\n"
-    report += f"Age: {age}\n"
-    report += f"Symptoms: {symptoms}\n"
-    report += f"Diagnosis: {diagnosis}\n"
-    report += f"Treatment: {treatment}\n"
-
-    st.success("Report generated!")
-    st.write(report)
-    st.markdown("You can download report as a text file")
-    if st.button("Download Report"):
-        st.text_area(report, 'download')
-      
-st.title("Medical Report Generator")
-generate_report()
 
 
 st.sidebar.title("ALL Detector")
@@ -249,7 +229,27 @@ if st.button("Generate PDF"):
     st.write("You can download your pdf file by clicking [here]({})".format(pdf_file))
 
 
+def generate_report():
+    patient_name = st.text_input("Patient Name")
+    age = st.number_input("Age")
+    symptoms = st.text_area("Symptoms")
+    diagnosis = st.text_input("Diagnosis")
+    treatment = st.text_input("Treatment")
 
+    report = f"Medical Report for {patient_name}\n"
+    report += f"Age: {age}\n"
+    report += f"Symptoms: {symptoms}\n"
+    report += f"Diagnosis: {diagnosis}\n"
+    report += f"Treatment: {treatment}\n"
+
+    st.success("Report generated!")
+    st.write(report)
+    st.markdown("You can download report as a text file")
+    if st.button("Download Report"):
+        st.text_area(report, 'download')
+      
+st.title("Medical Report Generator")
+generate_report()
 
 
  
