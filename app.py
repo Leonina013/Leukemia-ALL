@@ -118,6 +118,29 @@ confidence = confidence_score
 print('Class:', class_name, end='')
 print('Confidence score:', confidence_score)
 
+def create_report():
+    st.title("Medical Report")
+
+    patient_name = st.text_input("Patient Name")
+    age = st.number_input("Age")
+    symptoms = st.text_area("Symptoms")
+    diagnosis = st.text_area("Diagnosis")
+    treatment = st.text_area("Treatment")
+
+    if st.button("Create Report"):
+        report = f"""
+        Patient Name: {patient_name}
+        Age: {age}
+        Symptoms: {symptoms}
+        Diagnosis: {diagnosis}
+        Treatment: {treatment}
+        """
+        st.success("Report created!")
+        st.text(report)
+        st.markdown("Or")
+        st.write("click below to download the report.")
+        st.markdown("<a href='download' download='Medical_Report.txt'>Download Report</a>", unsafe_allow_html=True)
+
 
 
 st.title("ALL Classification")
@@ -226,37 +249,15 @@ def create_report():
             f.write(report)
         st.markdown(f'<a href="{temp.name}" download="Medical_Report_{patient_name}.txt">Download Report</a>', unsafe_allow_html=True)
 
-
-
-def create_report():
-    st.title("Medical Report")
-
-    patient_name = st.text_input("Patient Name")
-    age = st.number_input("Age")
-    symptoms = st.text_area("Symptoms")
-    diagnosis = st.text_area("Diagnosis")
-    treatment = st.text_area("Treatment")
-
-    if st.button("Create Report"):
-        report = f"""
-        Patient Name: {patient_name}
-        Age: {age}
-        Symptoms: {symptoms}
-        Diagnosis: {diagnosis}
-        Treatment: {treatment}
-        """
-        st.success("Report created!")
-        st.text(report)
-        st.markdown("Or")
-        st.write("click below to download the report.")
-        st.markdown("<a href='download' download='Medical_Report.txt'>Download Report</a>", unsafe_allow_html=True)
-
 ans=st.slider("Would you like a report detailing the diagnosis?", options=['YES','No Decision','NO'])  
 
 if ans=='YES':
  create_report()
 else:
  st.write("Okay, have a healthy time ahead")
+
+
+
 
 
 
