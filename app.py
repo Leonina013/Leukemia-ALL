@@ -255,9 +255,9 @@ def create_report():
         Treatment: {treatment1}
         Smoker: {smoker}
         """
+        st.image('model/1.jpg')
         st.success("Report created!")
         st.text(report)
-        st.image('model/1.jpg')
         st.markdown("Or")
         st.write("click below to download the report.")
         st.markdown("<a href='download' download='Medical_Report.txt'>Download Report</a>", unsafe_allow_html=True)
