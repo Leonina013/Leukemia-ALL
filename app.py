@@ -8,7 +8,7 @@ from tensorflow.keras.optimizers import RMSprop
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from PIL import Image, ImageOps
 import numpy as np
-from pathlib import Path
+
 
 from keras.models import load_model
 from PIL import Image, ImageOps #Install pillow instead of PIL
@@ -247,10 +247,12 @@ def create_report():
         """
         st.success("Report created!")
         st.text(report)
-        temp = Path(f"Medical_Report_{patient_name}.txt")
-        temp.write_text(report)
-        st.markdown(f'<a href="{temp}" download="Medical_Report_{patient_name}.txt">Download Report</a>', unsafe_allow_html=True)
+        st.markdown("Or")
+        st.write("click below to download the report.")
+        st.markdown("<a href='download' download='Medical_Report.txt'>Download Report</a>", unsafe_allow_html=True)
 
+if __name__ == "__main__":
+    create_report()
 
 
 
