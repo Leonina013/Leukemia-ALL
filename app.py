@@ -1,9 +1,9 @@
 import streamlit as st
 import os
 from PIL import Image
+from reportlab.lib import colors
 from reportlab.lib.pagesizes import letter
-from reportlab.lib.styles import getSampleStyleSheet
-from reportlab.platypus import Paragraph, SimpleDocTemplate
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 import random
 import tensorflow as tf
 from tensorflow import keras
@@ -229,7 +229,21 @@ def generate_report():
 st.title("Medical Report Generator")
 generate_report()
 
+def generate_pdf(report):
+    pdf_file = "report.pdf"
+    doc = SimpleDocTemplate(pdf_file, pagesize=letter)
+    story = []
+    for line in report.split("\n"):
+        p = Paragraph(line, style)
+        story.append(p)
+        story.append(Spacer(1, 12))
+    doc.build(story)
+    return pdf_file
 
+if st.button("Download Report"):
+    pdf_file = generate_pdf(report)
+    st.markdown("Report is available for download.")
+    st.markdown("[Download Report]({})".format(pdf_file))
  
 
 
