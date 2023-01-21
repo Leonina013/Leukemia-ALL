@@ -80,7 +80,15 @@ class_names = open('model/labels.txt', 'r').readlines()
 data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 
 st.header('Acute Lymphoblastic Leukemia Detector')
-st.subheader('Make sure that you put in a picture of a cell slide. Anything else might give a false result of a Benign tumor. You have been warned')
+st.subheader('The properties of the Slide pictures should be as follows:')
+st.subheader('1: Put a picture of a blood slide only')
+st.subheader('2: Results will be better if blood is taken from somewhere near bone marrow and lymph nodes'
+st.subheader('3: The slide should be at a 100x magnification'             
+st.subheader('4: Make sure that the picture has no noise')            
+             
+             
+             
+             
 
 mode=st.sidebar.select_slider('Choose between using a jpg file or taking a picture using your camera', options=['JPG','CAMERA'])
 
