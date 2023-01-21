@@ -101,6 +101,7 @@ if mode == 'JPG':
  uploaded_file = st.file_uploader("Choose an Image", type="jpg")
 
 image = Image.open(uploaded_file).convert('RGB')
+image2 = Image.open('1.jpeg').convert('RGB')
 
 
 #resize the image to a 224x224 with the same strategy as in TM2:
@@ -243,14 +244,11 @@ def create_report():
     probability = confidence_score*100
     diagnosis = class_name
     treatment1 = treatment 
-    with open("1.jpeg", "rb") as image_file:
-     encoded_string = base64.b64encode(image_file.read()).decode()
-     decoded_image = base64.b64decode(encoded_string)
-     image = Image.open(io.BytesIO(decoded_image))
+    
 
     if st.button("Create Report"):
         report = f"""
-        Image: {image}
+        Image: {image2}
         Patient Name: {patient_name}
         Age: {age1}
         Probability: {probability}
