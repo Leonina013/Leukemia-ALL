@@ -250,7 +250,7 @@ def create_report():
         Probability: {probability}
         Diagnosis: {diagnosis}
         Treatment: {treatment1}
-        Smoker: {smoker}
+        Smoker: st.subheader{smoker}
         """
         st.success("Report created!")
         st.text(report)
