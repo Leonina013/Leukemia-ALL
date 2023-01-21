@@ -168,6 +168,11 @@ sex = st.sidebar.selectbox('What is the sex of the person?',('Male', 'Female'))
 age = st.sidebar.slider("What is the age of the person?",0.0,150.0,50.0)
 smoker = st.sidebar.selectbox('Is the Person a Smoker',('Yes', 'No'))
 
+if index!=4:
+ st.write("This is not a picture of ALL")   
+ 
+else:
+ 
 
 if age <= 5.0 and sex == 'Male':
  confidence = confidence_score * ((165+age)/100)
@@ -227,9 +232,7 @@ if confidence_score >= 0.85:
   st.write("This looks like an early Malignant Pre-B variant of ALL. You need to get it checked as a priority before it becomes something serious")
   st.write("Malignancy is a term for diseases in which abnormal cells divide without control and can invade nearby tissues. Malignant cells can also spread  to other parts of the body through the blood and lymph systems.")
 
-
- else:
-  st.write("This is not a picture of ALL")   
+  
    
 
 def create_report():
