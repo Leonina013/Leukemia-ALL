@@ -83,8 +83,8 @@ st.header('Acute Lymphoblastic Leukemia Detector')
 st.subheader('The properties of the Slide pictures should be as follows:')
 st.subheader('1: Put a picture of a blood slide only')
 st.subheader('2: Results will be better if blood is taken from somewhere near bone marrow and lymph nodes')
-st.subheader('3: The slide should be at a 100x magnification')             
-st.subheader('4: Make sure that the picture has no noise')            
+st.subheader('3: The slide should be at a 1000x magnification')             
+st.subheader('4: Make sure that the picture has minimal noise')            
              
              
              
