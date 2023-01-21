@@ -169,7 +169,7 @@ age = st.sidebar.slider("What is the age of the person?",0.0,150.0,50.0)
 smoker = st.sidebar.selectbox('Is the Person a Smoker',('Yes', 'No'))
 
 if index==4:
- st.write("This is not a picture of ALL")   
+ st.subheader("This is not a picture of ALL")   
  
 else:
  
