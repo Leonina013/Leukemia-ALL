@@ -9,7 +9,6 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from PIL import Image, ImageOps
 import numpy as np
 from pathlib import Path
-import shutil
 
 from keras.models import load_model
 from PIL import Image, ImageOps #Install pillow instead of PIL
