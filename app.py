@@ -170,7 +170,6 @@ smoker = st.sidebar.selectbox('Is the Person a Smoker',('Yes', 'No'))
 
 if index==4:
  st.subheader("This is not a picture of ALL")   
- 
 else:
  
 
@@ -191,9 +190,6 @@ else:
  if age > 50.0 and sex == 'Female':
   confidence = confidence_score * ((65+age)/100)
   
- 
- 
-
  if smoker == 'Yes' and age >= 60:
   confidence2 = confidence*3.4
   st.write("Smoking increases your chance of having ALL 3.4 times your actual probability after all other factors like age and gender have been considered")
