@@ -244,7 +244,7 @@ def create_report():
     diagnosis = class_name
     treatment1 = treatment 
     with open("1.jpeg", "rb") as image_file:
-    encoded_string = base64.b64encode(image_file.read()).decode()
+     encoded_string = base64.b64encode(image_file.read()).decode()
 
     if st.button("Create Report"):
         report = f"""
