@@ -229,7 +229,28 @@ def create_report():
 
 
 
+def create_report():
+    st.title("Medical Report")
 
+    patient_name = st.text_input("Patient Name")
+    age = st.number_input("Age")
+    symptoms = st.text_area("Symptoms")
+    diagnosis = st.text_area("Diagnosis")
+    treatment = st.text_area("Treatment")
+
+    if st.button("Create Report"):
+        report = f"""
+        Patient Name: {patient_name}
+        Age: {age}
+        Symptoms: {symptoms}
+        Diagnosis: {diagnosis}
+        Treatment: {treatment}
+        """
+        st.success("Report created!")
+        st.text(report)
+        temp = Path(f"Medical_Report_{patient_name}.txt")
+        temp.write_text(report)
+        st.markdown(f'<a href="{temp}" download="Medical_Report_{patient_name}.txt">Download Report</a>', unsafe_allow_html=True)
 
 
 
