@@ -4,5 +4,3 @@ numpy
 keras.preprocessing
 h5py
 reportlab
-io
-fpdf
