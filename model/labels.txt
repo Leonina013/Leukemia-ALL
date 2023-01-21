@@ -1,0 +1,5 @@
+0 Benign
+1 Pro-B (Malignant)
+2 Pre-B (Malignant)
+3 Early Pre-B (Malignant)
+4 Not ALL
