@@ -229,7 +229,7 @@ def create_report():
 
     patient_name = st.text_input("Patient Name")
     age1 = age
-    symptoms = confidence
+    probability = confidence_score
     diagnosis = class_name
     treatment = st.text_area("Treatment")
 
@@ -237,9 +237,10 @@ def create_report():
         report = f"""
         Patient Name: {patient_name}
         Age: {age1}
-        Symptoms: {symptoms}
+        Probability: {probability}
         Diagnosis: {diagnosis}
         Treatment: {treatment}
+        Smoker: {smoker}
         """
         st.success("Report created!")
         st.text(report)
