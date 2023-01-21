@@ -243,6 +243,7 @@ def create_report():
         Smoker: {smoker}
         """
         st.success("Report created!")
+        st.markdown(f"<div style='background-color:white; padding: 10px;'>{report}</div>", unsafe_allow_html=True)
         st.text(report)
         st.markdown("Or")
         st.write("click below to download the report.")
