@@ -209,7 +209,7 @@ if confidence_score >= 0.85:
   st.write('You identify as', sex,'and your age is', age,'years')
   st.write('The Predicted Class is:', class_name)
   st.write('Probability Percentage:', confidence_score*100, '%')
-  st.write("You may have a benign condition, or are free of ALL. Get it checked once during your regular body check")
+  st.write("You have a benign condition, or are free of ALL. Get it checked once during your regular body check")
   st.write("Benign tumors are those that stay in their primary location without invading other sites of the body. They do not spread to local structures or to distant parts of the body. Benign tumors tend to grow slowly and have distinct borders. Benign tumors are not usually problematic.")
 
 
@@ -229,7 +229,7 @@ if confidence_score >= 0.85:
 
 
  else:
-  st.write("You are free from ALL but don't forget to get a body checkup regularly")   
+  st.write("This is not a picture of ALL")   
    
 
 def create_report():
