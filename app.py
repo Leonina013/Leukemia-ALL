@@ -243,11 +243,9 @@ def create_report():
         """
         st.success("Report created!")
         st.text(report)
-        temp = tempfile.NamedTemporaryFile(delete=False,suffix='.txt')
-        shutil.copy(temp.name,f"Medical_Report_{patient_name}.txt")
-        with open(temp.name, 'w') as f:
-            f.write(report)
-        st.markdown(f'<a href="{temp.name}" download="Medical_Report_{patient_name}.txt">Download Report</a>', unsafe_allow_html=True)
+        st.markdown("Or")
+        st.write("click below to download the report.")
+        st.markdown("<a href='download' download='Medical_Report.txt'>Download Report</a>", unsafe_allow_html=True)
 
 ans=st.select_slider("Would you like a report detailing the diagnosis?", options=['YES','NO'])  
 
