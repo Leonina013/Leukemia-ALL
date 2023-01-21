@@ -1,6 +1,9 @@
 import streamlit as st
+from streamlit.components.v1 import iframe
 import os
 import pdfkit
+from jinja2 import Environment, PackageLoader, select_autoescape, FileSystemLoader
+from datetime import date
 from PIL import Image
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import letter
@@ -208,28 +211,54 @@ if confidence_score >= 0.85:
    
 
 
-def generate_report():
-    patient_name = st.text_input("Patient Name", key="patient_name")
-    age = st.number_input("Age", key="age")
-    symptoms = st.text_area("Symptoms", key="symptoms")
-    diagnosis = st.text_input("Diagnosis", key="diagnosis")
-    treatment = st.text_input("Treatment", key="treatment")
+st.set_page_config(layout="centered", page_icon="ðŸŽ“", page_title="Diploma Generator")
+st.title("ðŸŽ“ Diploma PDF Generator")
 
-    report = f"Medical Report for {patient_name}\n"
-    report += f"Age: {age}\n"
-    report += f"Symptoms: {symptoms}\n"
-    report += f"Diagnosis: {diagnosis}\n"
-    report += f"Treatment: {treatment}\n"
+st.write(
+    "This app shows you how you can use Streamlit to make a PDF generator app in just a few lines of code!"
+)
 
-    st.success("Report generated!")
-    st.write(report)
-    if st.button("Download Report", key="download_report"):
-        pdfkit.from_string(report, 'report.pdf')
-        st.markdown("Report is available for download.")
-        st.markdown("[Download Report](report.pdf)")
+left, right = st.columns(2)
 
-st.title("Medical Report Generator")
-generate_report()
+right.write("Here's the template we'll be using:")
+
+right.image("template.png", width=300)
+
+env = Environment(loader=FileSystemLoader("."), autoescape=select_autoescape())
+template = env.get_template("template.html")
+
+
+left.write("Fill in the data:")
+form = left.form("template_form")
+student = form.text_input("Student name")
+course = form.selectbox(
+    "Choose course",
+    ["Report Generation in Streamlit", "Advanced Cryptography"],
+    index=0,
+)
+grade = form.slider("Grade", 1, 100, 60)
+submit = form.form_submit_button("Generate PDF")
+
+if submit:
+    html = template.render(
+        student=student,
+        course=course,
+        grade=f"{grade}/100",
+        date=date.today().strftime("%B %d, %Y"),
+    )
+
+    pdf = pdfkit.from_string(html, False)
+    st.balloons()
+
+    right.success("ðŸŽ‰ Your diploma was generated!")
+    # st.write(html, unsafe_allow_html=True)
+    # st.write("")
+    right.download_button(
+        "â¬‡ï¸ Download PDF",
+        data=pdf,
+        file_name="diploma.pdf",
+        mime="application/octet-stream",
+    )
 
  
 
