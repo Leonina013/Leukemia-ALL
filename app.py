@@ -228,9 +228,9 @@ def create_report():
     st.title("Medical Report")
 
     patient_name = st.text_input("Patient Name")
-    age1 = age
-    probability = confidence_score*100
-    diagnosis = class_name
+    age1 = st.text_area(age)
+    probability = st.text_area(confidence_score*100)
+    diagnosis = st.text_area(class_name)
     treatment = st.text_area("Treatment")
 
     if st.button("Create Report"):
