@@ -249,7 +249,7 @@ def create_report():
             f.write(report)
         st.markdown(f'<a href="{temp.name}" download="Medical_Report_{patient_name}.txt">Download Report</a>', unsafe_allow_html=True)
 
-ans=st.sidebar.select_slider("Would you like a report detailing the diagnosis?", options=['YES','No Decision','NO'])  
+ans=st.select_slider("Would you like a report detailing the diagnosis?", options=['YES','No Decision','NO'])  
 
 if ans=='YES':
  create_report()
