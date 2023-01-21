@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: streamlit-wallet-connect
+Version: 0.0.9
+Summary: A Streamlit component for interacting with Web3.
+Home-page: 
+Author: AlgoveraAI
+Author-email: hello@algovera.ai
+Requires-Python: >=3.6
+Description-Content-Type: text/plain
+License-File: LICENSE
