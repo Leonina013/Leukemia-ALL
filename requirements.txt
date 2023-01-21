@@ -3,5 +3,5 @@ tensorflow
 numpy
 keras.preprocessing
 h5py
-tempfile
+pathlib
 shutil
