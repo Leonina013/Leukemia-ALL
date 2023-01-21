@@ -228,15 +228,15 @@ def create_report():
     st.title("Medical Report")
 
     patient_name = st.text_input("Patient Name")
-    age = st.number_input("Age")
-    symptoms = st.text_area("Symptoms")
-    diagnosis = st.text_area("Diagnosis")
+    age1 <- age
+    symptoms <- confidence
+    diagnosis <- class_name
     treatment = st.text_area("Treatment")
 
     if st.button("Create Report"):
         report = f"""
         Patient Name: {patient_name}
-        Age: {age}
+        Age: {age1}
         Symptoms: {symptoms}
         Diagnosis: {diagnosis}
         Treatment: {treatment}
