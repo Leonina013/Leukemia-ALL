@@ -224,13 +224,13 @@ if confidence_score >= 0.85:
 
   if index == 1:
    st.subheader("This looks like a Malignant Pro-B variant of ALL. You need to get it checked before the cancer starts spreading")
-   treatment = ("Get an appointment to a health professional immediately. While you wai for the appointment, do the following:\n        Provide comfort measures: This can include things like keeping the person warm and comfortable, helping them to stay hydrated and giving them pain medication as prescribed by a doctor.\n        Once admitted, administering oxygen to help with breathing if needed.")
+   treatment = ("Get an appointment to a health professional immediately. While you wait for the appointment, do the following:\n        Provide comfort measures: This can include things like keeping the person warm and comfortable, helping them to stay hydrated and giving them pain medication as prescribed by a doctor.\n        Once admitted, administering oxygen to help with breathing if needed.")
   elif index == 2:
    st.subheader("This looks like a Malignant Pre-B variant of ALL. You need to get it checked ASAP before the condition metastisizes")
-   treatment = ("Get an appointment to a health professional immediately. While you wai for the appointment, do the following:\n        Provide comfort measures: This can include things like keeping the person warm and comfortable, helping them to stay hydrated and giving them pain medication as prescribed by a doctor.\n        Once admitted, administering oxygen to help with breathing if needed.")
+   treatment = ("Get an appointment to a health professional immediately. While you wait for the appointment, do the following:\n        Provide comfort measures: This can include things like keeping the person warm and comfortable, helping them to stay hydrated and giving them pain medication as prescribed by a doctor.\n        Once admitted, administering oxygen to help with breathing if needed.")
   elif index == 3:
    st.subheader("This looks like an early Malignant Pre-B variant of ALL. You need to get it checked as a priority before it becomes something serious")
-   treatment = ("Get an appointment to a health professional immediately. While you wai for the appointment, do the following:\n        Provide comfort measures: This can include things like keeping the person warm and comfortable, helping them to stay hydrated and giving them pain medication as prescribed by a doctor.\n        Once admitted, administering oxygen to help with breathing if needed.")
+   treatment = ("Get an appointment to a health professional immediately. While you wait for the appointment, do the following:\n        Provide comfort measures: This can include things like keeping the person warm and comfortable, helping them to stay hydrated and giving them pain medication as prescribed by a doctor.\n        Once admitted, administering oxygen to help with breathing if needed.")
    st.write("Malignancy is a term for diseases in which abnormal cells divide without control and can invade nearby tissues. Malignant cells can also spread  to other parts of the body through the blood and lymph systems.")
 
   
