@@ -1,9 +1,6 @@
 import streamlit as st
 import os
 from PIL import Image
-from reportlab.lib import colors
-from reportlab.lib.pagesizes import letter
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 import random
 import tensorflow as tf
 from tensorflow import keras
