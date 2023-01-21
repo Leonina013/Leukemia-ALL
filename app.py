@@ -245,10 +245,12 @@ def create_report():
     treatment1 = treatment 
     with open("1.jpeg", "rb") as image_file:
      encoded_string = base64.b64encode(image_file.read()).decode()
+     decoded_image = base64.b64decode(encoded_string)
+     image = Image.open(io.BytesIO(decoded_image))
 
     if st.button("Create Report"):
         report = f"""
-        Image: {encoded_string}
+        Image: {image}
         Patient Name: {patient_name}
         Age: {age1}
         Probability: {probability}
