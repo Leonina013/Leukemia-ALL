@@ -3,4 +3,3 @@ tensorflow
 numpy
 keras.preprocessing
 h5py
-pip install streamlit-wallet-connect
