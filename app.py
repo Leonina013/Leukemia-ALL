@@ -101,7 +101,7 @@ if mode == 'JPG':
  uploaded_file = st.file_uploader("Choose an Image", type="jpg")
 
 image = Image.open(uploaded_file).convert('RGB')
-image2 = Image.open('model/1.jpg').convert('RGB')
+
 
 
 #resize the image to a 224x224 with the same strategy as in TM2:
@@ -248,7 +248,6 @@ def create_report():
 
     if st.button("Create Report"):
         report = f"""
-        Image: {image2}
         Patient Name: {patient_name}
         Age: {age1}
         Probability: {probability}
@@ -258,6 +257,7 @@ def create_report():
         """
         st.success("Report created!")
         st.text(report)
+        st.image('model/1.jpg')
         st.markdown("Or")
         st.write("click below to download the report.")
         st.markdown("<a href='download' download='Medical_Report.txt'>Download Report</a>", unsafe_allow_html=True)
