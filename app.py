@@ -213,14 +213,7 @@ if confidence_score >= 0.85:
   st.write('Probability Percentage:', confidence_score*100, '%')
   st.write("You have a benign condition. Get it checked quickly")
   st.write("Benign tumors are those that stay in their primary location without invading other sites of the body. They do not spread to local structures or to distant parts of the body. Benign tumors tend to grow slowly and have distinct borders. Benign tumors are not usually problematic.")
-  treatment = ("Applying a cold pack: If the tumor is causing pain or swelling, a cold pack can help to reduce inflammation and provide relief.\n
-  \n
-  Protecting the area: If the tumor is located in an area that is easily bumped or injured, it is important to protect it with a bandage or brace to prevent further damage.\n
-  \n
-  Keep the area clean: If the tumor is open or bleeding, it is important to keep the area clean to prevent infection. Use soap and water to gently clean the area and apply an antibiotic ointment if necessary.\n
-  \n
-  Over-the-counter pain relief: If the tumor is causing pain, over-the-counter pain relief medications such as ibuprofen or acetaminophen can help to manage symptoms.")
-
+  treatment = ("Applying a cold pack: If the tumor is causing pain or swelling, a cold pack can help to reduce inflammation and provide relief.\nProtecting the area: If the tumor is located in an area that is easily bumped or injured, it is important to protect it with a bandage or brace to prevent further damage.\nKeep the area clean: If the tumor is open or bleeding, it is important to keep the area clean to prevent infection. Use soap and water to gently clean the area and apply an antibiotic ointment if necessary.\nOver-the-counter pain relief: If the tumor is causing pain, over-the-counter pain relief medications such as ibuprofen or acetaminophen can help to manage symptoms.")
  else:
   st.write('You identify as', sex,'and your age is', age,'years')
   st.write('The Predicted Class is:', class_name)
@@ -229,25 +222,13 @@ if confidence_score >= 0.85:
 
   if index == 1:
    st.subheader("This looks like a Malignant Pro-B variant of ALL. You need to get it checked before the cancer starts spreading")
-   treatment = ("Get an appointment to a health professional immediately. While you wai for the appointment, do the following:\n
-  \n
-  Provide comfort measures: This can include things like keeping the person warm and comfortable, helping them to stay hydrated and giving them pain medication as prescribed by a doctor.\n
-  \n
-  Once admitted, administering oxygen to help with breathing if needed.")
+   treatment = ("Get an appointment to a health professional immediately. While you wai for the appointment, do the following:\n Provide comfort measures: This can include things like keeping the person warm and comfortable, helping them to stay hydrated and giving them pain medication as prescribed by a doctor.\nOnce admitted, administering oxygen to help with breathing if needed.")
   elif index == 2:
    st.subheader("This looks like a Malignant Pre-B variant of ALL. You need to get it checked ASAP before the condition metastisizes")
-   treatment = ("Get an appointment to a health professional immediately. While you wai for the appointment, do the following:\n
-  \n
-  Provide comfort measures: This can include things like keeping the person warm and comfortable, helping them to stay hydrated and giving them pain medication as prescribed by a doctor.\n
-  \n
-  Once admitted, administering oxygen to help with breathing if needed.")
+   treatment = ("Get an appointment to a health professional immediately. While you wai for the appointment, do the following:\n Provide comfort measures: This can include things like keeping the person warm and comfortable, helping them to stay hydrated and giving them pain medication as prescribed by a doctor.\nOnce admitted, administering oxygen to help with breathing if needed.")
   elif index == 3:
    st.subheader("This looks like an early Malignant Pre-B variant of ALL. You need to get it checked as a priority before it becomes something serious")
-   treatment = ("Get an appointment to a health professional immediately. While you wai for the appointment, do the following:\n
-  \n
-  Provide comfort measures: This can include things like keeping the person warm and comfortable, helping them to stay hydrated and giving them pain medication as prescribed by a doctor.\n
-  \n
-  Once admitted, administering oxygen to help with breathing if needed.")
+   treatment = ("Get an appointment to a health professional immediately. While you wai for the appointment, do the following:\n Provide comfort measures: This can include things like keeping the person warm and comfortable, helping them to stay hydrated and giving them pain medication as prescribed by a doctor.\nOnce admitted, administering oxygen to help with breathing if needed.")
    st.write("Malignancy is a term for diseases in which abnormal cells divide without control and can invade nearby tissues. Malignant cells can also spread  to other parts of the body through the blood and lymph systems.")
 
   
