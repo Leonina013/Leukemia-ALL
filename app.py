@@ -1,5 +1,6 @@
 import streamlit as st
 import os
+import pdfkit
 from PIL import Image
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import letter
@@ -222,22 +223,10 @@ def generate_report():
 
     st.success("Report generated!")
     st.write(report)
-    st.markdown("You can download report as a text file")
     if st.button("Download Report", key="download_report"):
-        pdf_file = generate_pdf(report)
+        pdfkit.from_string(report, 'report.pdf')
         st.markdown("Report is available for download.")
-        st.markdown("[Download Report]({})".format(pdf_file))
-
-def generate_pdf(report):
-    pdf_file = "report.pdf"
-    doc = SimpleDocTemplate(pdf_file, pagesize=letter)
-    story = []
-    for line in report.split("\n"):
-        p = Paragraph(line, style)
-        story.append(p)
-        story.append(Spacer(1, 12))
-    doc.build(story)
-    return pdf_file
+        st.markdown("[Download Report](report.pdf)")
 
 st.title("Medical Report Generator")
 generate_report()
