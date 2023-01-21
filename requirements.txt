@@ -3,5 +3,4 @@ tensorflow
 numpy
 keras.preprocessing
 h5py
-pathlib
 base64
