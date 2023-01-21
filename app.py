@@ -242,9 +242,9 @@ def create_report():
         Treatment: {treatment}
         Smoker: {smoker}
         """
+        st.markdown("<div style='background-color:white; padding: 10px;'>", unsafe_allow_html=True)
         st.success("Report created!")
         st.text(report)
-        st.markdown(f"<div style='background-color:white; padding: 10px;'>{report}</div>", unsafe_allow_html=True)
         st.markdown("Or")
         st.write("click below to download the report.")
         st.markdown("<a href='download' download='Medical_Report.txt'>Download Report</a>", unsafe_allow_html=True)
