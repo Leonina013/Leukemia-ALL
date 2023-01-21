@@ -174,63 +174,63 @@ if index!=4:
 else:
  
 
-if age <= 5.0 and sex == 'Male':
- confidence = confidence_score * ((165+age)/100)
-if age > 5.0 and age <= 25.0 and sex == 'Male':
- confidence = confidence_score * ((100-age)/100)
-if age > 25.0 and age <=50.0 and sex == 'Male':
- confidence = confidence_score * ((60+age)/100)
-if age > 50.0 and sex == 'Male':
- confidence = confidence_score * ((70+age)/100)
-if age <= 5.0 and sex == 'Female':
- confidence = confidence_score * ((160+age)/100)
-if age > 5.0 and age <= 50.0 and sex == 'Female':
- confidence = confidence_score * ((95-age)/100)
-if age > 25.0 and age <=50.0 and sex == 'Female':
- confidence = confidence_score * ((50+age)/100)
-if age > 50.0 and sex == 'Female':
- confidence = confidence_score * ((65+age)/100)
+ if age <= 5.0 and sex == 'Male':
+  confidence = confidence_score * ((165+age)/100)
+ if age > 5.0 and age <= 25.0 and sex == 'Male':
+  confidence = confidence_score * ((100-age)/100)
+ if age > 25.0 and age <=50.0 and sex == 'Male':
+  confidence = confidence_score * ((60+age)/100)
+ if age > 50.0 and sex == 'Male':
+  confidence = confidence_score * ((70+age)/100)
+ if age <= 5.0 and sex == 'Female':
+  confidence = confidence_score * ((160+age)/100)
+ if age > 5.0 and age <= 50.0 and sex == 'Female':
+  confidence = confidence_score * ((95-age)/100)
+ if age > 25.0 and age <=50.0 and sex == 'Female':
+  confidence = confidence_score * ((50+age)/100)
+ if age > 50.0 and sex == 'Female':
+  confidence = confidence_score * ((65+age)/100)
   
  
  
 
-if smoker == 'Yes' and age >= 60:
- confidence2 = confidence*3.4
- st.write("Smoking increases your chance of having ALL 3.4 times your actual probability after all other factors like age and gender have been considered")
-if smoker == 'Yes' and age < 60:
- confidence2 = confidence*1.72
- st.write("Smoking increases your chance of having ALL 1.72 times your actual probability after all other factors like age and gender have been considered")
-if smoker == 'No':
- confidence2 = confidence
+ if smoker == 'Yes' and age >= 60:
+  confidence2 = confidence*3.4
+  st.write("Smoking increases your chance of having ALL 3.4 times your actual probability after all other factors like age and gender have been considered")
+ if smoker == 'Yes' and age < 60:
+  confidence2 = confidence*1.72
+  st.write("Smoking increases your chance of having ALL 1.72 times your actual probability after all other factors like age and gender have been considered")
+ if smoker == 'No':
+  confidence2 = confidence
   
  
 #https://pubmed.ncbi.nlm.nih.gov/8246285/#:~:text=However%2C%20among%20participants%20aged%2060,CI%20%3D%200.97%2D11.9).
 
 
 
-if confidence_score >= 0.85:
+  if confidence_score >= 0.85:
 
- if index == 0:
-  st.write('You identify as', sex,'and your age is', age,'years')
-  st.write('The Predicted Class is:', class_name)
-  st.write('Probability Percentage:', confidence_score*100, '%')
-  st.write("You have a benign condition, or are free of ALL. Get it checked once during your regular body check")
-  st.write("Benign tumors are those that stay in their primary location without invading other sites of the body. They do not spread to local structures or to distant parts of the body. Benign tumors tend to grow slowly and have distinct borders. Benign tumors are not usually problematic.")
+  if index == 0:
+   st.write('You identify as', sex,'and your age is', age,'years')
+   st.write('The Predicted Class is:', class_name)
+   st.write('Probability Percentage:', confidence_score*100, '%')
+   st.write("You have a benign condition, or are free of ALL. Get it checked once during your regular body check")
+   st.write("Benign tumors are those that stay in their primary location without invading other sites of the body. They do not spread to local structures or to distant parts of the body. Benign tumors tend to grow slowly and have distinct borders. Benign tumors are not usually problematic.")
 
 
- else:
-  st.write('You identify as', sex,'and your age is', age,'years')
-  st.write('The Predicted Class is:', class_name)
-  st.write('The Original Probability Percentage:', confidence_score*100, '%')
-  st.write('Probability Percentage due to your age group:', confidence2 * 100, '%')
+  else:
+   st.write('You identify as', sex,'and your age is', age,'years')
+   st.write('The Predicted Class is:', class_name)
+   st.write('The Original Probability Percentage:', confidence_score*100, '%')
+   st.write('Probability Percentage due to your age group:', confidence2 * 100, '%')
 
- if index == 1:
-  st.write("This looks like a Malignant Pro-B variant of ALL. You need to get it checked before the cancer starts spreading")
- elif index == 2:
-  st.write("This looks like a Malignant Pre-B variant of ALL. You need to get it checked ASAP before the condition metastisizes")
- elif index == 3:
-  st.write("This looks like an early Malignant Pre-B variant of ALL. You need to get it checked as a priority before it becomes something serious")
-  st.write("Malignancy is a term for diseases in which abnormal cells divide without control and can invade nearby tissues. Malignant cells can also spread  to other parts of the body through the blood and lymph systems.")
+  if index == 1:
+   st.write("This looks like a Malignant Pro-B variant of ALL. You need to get it checked before the cancer starts spreading")
+  elif index == 2:
+   st.write("This looks like a Malignant Pre-B variant of ALL. You need to get it checked ASAP before the condition metastisizes")
+  elif index == 3:
+   st.write("This looks like an early Malignant Pre-B variant of ALL. You need to get it checked as a priority before it becomes something serious")
+   st.write("Malignancy is a term for diseases in which abnormal cells divide without control and can invade nearby tissues. Malignant cells can also spread  to other parts of the body through the blood and lymph systems.")
 
   
    
