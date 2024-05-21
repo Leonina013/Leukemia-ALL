@@ -82,14 +82,13 @@ class_names = open('model/labels.txt', 'r').readlines()
 # determined by the first position in the shape tuple, in this case 1.
 data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 
-if login_button == True:
- st.header('Welcome')
- st.header('Acute Lymphoblastic Leukemia Detector')
- st.subheader('The properties of the Slide pictures should be as follows:')
- st.subheader('1: Put a picture of a blood slide only')
- st.subheader('2: Results will be better if blood is taken from somewhere near bone marrow and lymph nodes')
- st.subheader('3: The slide should be at a 1000x magnification')             
- st.subheader('4: Make sure that the picture has minimal noise')            
+st.header('Welcome')
+st.header('Acute Lymphoblastic Leukemia Detector')
+st.subheader('The properties of the Slide pictures should be as follows:')
+st.subheader('1: Put a picture of a blood slide only')
+st.subheader('2: Results will be better if blood is taken from somewhere near bone marrow and lymph nodes')
+st.subheader('3: The slide should be at a 1000x magnification')             
+st.subheader('4: Make sure that the picture has minimal noise')            
              
              
              
