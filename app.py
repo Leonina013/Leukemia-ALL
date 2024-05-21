@@ -94,65 +94,65 @@ st.subheader('4: Make sure that the picture has minimal noise')
              
              
 
- mode=st.sidebar.select_slider('Choose between using a jpg file or taking a picture using your camera', options=['JPG','CAMERA'])
+mode=st.sidebar.select_slider('Choose between using a jpg file or taking a picture using your camera', options=['JPG','CAMERA'])
 
- if mode == 'CAMERA':
-  uploaded_file = st.camera_input("Take a photo of the slide")
+if mode == 'CAMERA':
+ uploaded_file = st.camera_input("Take a photo of the slide")
 
 
- if mode == 'JPG':
-  uploaded_file = st.file_uploader("Choose an Image", type="jpg")
+if mode == 'JPG':
+ uploaded_file = st.file_uploader("Choose an Image", type="jpg")
 
- image = Image.open(uploaded_file).convert('RGB')
+image = Image.open(uploaded_file).convert('RGB')
 
 
 
 #resize the image to a 224x224 with the same strategy as in TM2:
 #resizing the image to be at least 224x224 and then cropping from the center
- size = (224, 224)
- image = ImageOps.fit(image, size, Image.Resampling.LANCZOS)
+size = (224, 224)
+image = ImageOps.fit(image, size, Image.Resampling.LANCZOS)
 
 #turn the image into a numpy array
- image_array = np.asarray(image)
+image_array = np.asarray(image)
 
 # Normalize the image
- normalized_image_array = (image_array.astype(np.float32) / 127.0) - 1
+normalized_image_array = (image_array.astype(np.float32) / 127.0) - 1
 
 # Load the image into the array
- data[0] = normalized_image_array
+data[0] = normalized_image_array
 
 # run the inference
 
- prediction = model.predict(data)
- index = np.argmax(prediction)
- class_name = class_names[index]
- confidence_score = prediction[0][index]
- confidence = confidence_score
- print('Class:', class_name, end='')
- print('Confidence score:', confidence_score)
+prediction = model.predict(data)
+index = np.argmax(prediction)
+class_name = class_names[index]
+confidence_score = prediction[0][index]
+confidence = confidence_score
+print('Class:', class_name, end='')
+print('Confidence score:', confidence_score)
 
- def create_report():
-    st.title("Medical Report")
+def create_report():
+   st.title("Medical Report")
 
-    patient_name = st.text_input("Patient Name")
-    age = st.number_input("Age")
-    symptoms = st.text_area("Symptoms")
-    diagnosis = st.text_area("Diagnosis")
-    treatment = st.text_area("Treatment")
+   patient_name = st.text_input("Patient Name")
+   age = st.number_input("Age")
+   symptoms = st.text_area("Symptoms")
+   diagnosis = st.text_area("Diagnosis")
+   treatment = st.text_area("Treatment")
 
-    if st.button("Create Report"):
-        report = f"""
-        Patient Name: {patient_name}
-        Age: {age}
-        Symptoms: {symptoms}
-        Diagnosis: {diagnosis}
-        Treatment: {treatment}
-        """
-        st.success("Report created!")
-        st.text(report)
-        st.markdown("Or")
-        st.write("click below to download the report.")
-        st.markdown("<a href='download' download='Medical_Report.txt'>Download Report</a>", unsafe_allow_html=True)
+   if st.button("Create Report"):
+       report = f"""
+       Patient Name: {patient_name}
+       Age: {age}
+       Symptoms: {symptoms}
+       Diagnosis: {diagnosis}
+       Treatment: {treatment}
+       """
+       st.success("Report created!")
+       st.text(report)
+       st.markdown("Or")
+       st.write("click below to download the report.")
+       st.markdown("<a href='download' download='Medical_Report.txt'>Download Report</a>", unsafe_allow_html=True)
 
 
 
