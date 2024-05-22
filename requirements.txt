@@ -3,4 +3,4 @@ tensorflow
 numpy
 keras.preprocessing
 h5py
-python 3.4.0
+python
