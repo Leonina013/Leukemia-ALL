@@ -60,11 +60,6 @@ def add_bg_from_url():
 
 add_bg_from_url()
 
-try:
-    model = tf.keras.models.load_model('model/keras_model.h5', compile=False)
-    print("Model loaded successfully")
-except Exception as e:
-    print(f"Error loading model: {e}")
 
 st.sidebar.title("ALL Detector")
 
@@ -74,7 +69,7 @@ np.set_printoptions(suppress=True)
 
 # Load the model
 
-model = tf.keras.models.load_model('model/keras_model.h5', compile=False)
+model = tf.keras.models.load_model('model/keras_model.h5', compile=True)
 
 
 # Load the labels
