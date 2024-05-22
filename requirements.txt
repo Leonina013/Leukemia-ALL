@@ -1,5 +1,5 @@
 streamlit==1.34.0
-tensorflow==2.16.1
+tensorflow==2.6.0
 numpy
 keras-preprocessing
 h5py
